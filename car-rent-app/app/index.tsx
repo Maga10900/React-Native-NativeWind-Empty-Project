@@ -13,7 +13,7 @@ export default function Index() {
         style={{ width: "100%", height: "100%" }}>
         <View className="flex-1 justify-between mb-2">
           <Text className="text-white text-[48px] w-[317px] text-center mt-[108px]">Find and rent car in easy steps.</Text>
-          <Pressable className="bg-[#FF5C00] w-[317px] h-[56px] rounded-[16px] justify-center ml-[36px]" onPress={() => router.push("/screens/auth/signin")}>
+          <Pressable className="bg-[#FF5C00] w-[317px] h-[56px] rounded-[16px] justify-center ml-[36px]" onPress={() => router.push("/(tabs)")}>
             <Text className="text-white text-[18px] font-bold text-center">Let's Go</Text>
           </Pressable>
         </View>
