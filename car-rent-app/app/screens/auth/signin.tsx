@@ -9,15 +9,15 @@ const signin = () => {
     const [password, setPassword] = React.useState('');
 
     const handleLogin = async () => {
-        await api.post("/Auth/Login", { email, password }).then(res => {
+        try {
+            const res = await api.post("/login", { email, password });
             login(res.data.token);
             console.log("Login response:", res.data);
-            console.log("Login successful, token:", res.data.token);
-            router.push("/(tabs)"); // navigate to main app after login
-        }).catch(err => {
+            router.push("/(tabs)");
+        } catch (err) {
             console.error("Login error:", err);
-        });
-    }
+        }
+    };
     return (
         <View className='flex-1 justify-center px-4'>
             <TextInput placeholder='Email' className='border-2 border-gray-300 rounded-lg px-4 py-2 mt-4' value={email} onChangeText={setEmail} />

@@ -2,7 +2,8 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5232/api', // backend URL
+  baseURL: 'https://reqres.in/api',
+  headers: { 'Content-Type': 'application/json' }
 });
 
 // request interceptor → token attach etmək üçün
